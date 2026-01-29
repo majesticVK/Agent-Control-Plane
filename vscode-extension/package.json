@@ -1,0 +1,81 @@
+{
+    "name": "agent-control-plane-vscode",
+    "displayName": "Agent Control Plane",
+    "description": "VS Code extension for inspecting and debugging AI agent traces",
+    "version": "1.0.0",
+    "publisher": "acp",
+    "engines": {
+        "vscode": "^1.85.0"
+    },
+    "categories": [
+        "Debuggers",
+        "Visualization",
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:acp.openTrace",
+        "onCommand:acp.showPanel",
+        "workspaceContains:**/traces/*.json"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "acp.openTrace",
+                "title": "ACP: Open Trace File"
+            },
+            {
+                "command": "acp.showPanel",
+                "title": "ACP: Show Trace Inspector"
+            },
+            {
+                "command": "acp.runDemo",
+                "title": "ACP: Run Demo Agent"
+            },
+            {
+                "command": "acp.analyzeTrace",
+                "title": "ACP: Analyze Current Trace"
+            }
+        ],
+        "viewsContainers": {
+            "activitybar": [
+                {
+                    "id": "acp-explorer",
+                    "title": "Agent Control Plane",
+                    "icon": "resources/icon.svg"
+                }
+            ]
+        },
+        "views": {
+            "acp-explorer": [
+                {
+                    "id": "acp.tracesView",
+                    "name": "Traces"
+                },
+                {
+                    "id": "acp.stepsView",
+                    "name": "Steps"
+                }
+            ]
+        },
+        "menus": {
+            "explorer/context": [
+                {
+                    "when": "resourceExtname == .json && resourcePath =~ /traces/",
+                    "command": "acp.openTrace",
+                    "group": "navigation"
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./"
+    },
+    "devDependencies": {
+        "@types/node": "^20.10.0",
+        "@types/vscode": "^1.85.0",
+        "typescript": "^5.3.2"
+    }
+}

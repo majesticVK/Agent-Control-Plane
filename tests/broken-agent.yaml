@@ -1,0 +1,26 @@
+# Agent Control Plane - Tests for Broken Agent
+
+tests:
+  - name: "Broken Agent Should Not Complete"
+    description: "Verify the broken agent fails or hits limit"
+    assertions:
+      - type: state_not_contains
+        params:
+          key: status
+          value: completed
+
+  - name: "Should Detect Excessive Tool Calls"
+    description: "Broken agent makes too many search calls"
+    assertions:
+      - type: step_type_count
+        params:
+          stepType: tool
+          count: 3
+          operator: gt
+
+  - name: "Should Have High Step Count"
+    description: "Broken agent takes many steps"
+    assertions:
+      - type: min_steps
+        params:
+          count: 5

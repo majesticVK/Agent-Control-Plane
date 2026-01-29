@@ -1,0 +1,33 @@
+# Agent Control Plane - Behavioral Tests
+
+tests:
+  - name: "Restaurant Search Tool Should Be Called"
+    description: "Verify the agent searches for restaurants"
+    assertions:
+      - type: tool_called
+        params:
+          tool: search_restaurants
+          minTimes: 1
+
+  - name: "Agent Should Complete Within Step Limit"
+    description: "Agent should not take too many steps"
+    assertions:
+      - type: max_steps
+        params:
+          count: 8
+
+  - name: "Booking Tool Should Be Called"
+    description: "Verify the agent makes a booking"
+    assertions:
+      - type: tool_called
+        params:
+          tool: book_restaurant
+          minTimes: 1
+
+  - name: "Agent Should Complete Successfully"
+    description: "Verify the agent reaches completed state"
+    assertions:
+      - type: state_contains
+        params:
+          key: status
+          value: completed

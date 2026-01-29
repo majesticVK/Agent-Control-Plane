@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+dist/
+out/
+
+# Traces (keep directory but ignore files)
+traces/*.json
+traces/replays/*.json
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Build
+*.tsbuildinfo
+
+# Test
+coverage/
+
+# Environment
+.env
+.env.local
