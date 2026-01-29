@@ -1,0 +1,45 @@
+{
+  "name": "agent-control-plane",
+  "version": "1.0.0",
+  "description": "A local-first developer tool for recording, replaying, and testing AI agent behavior",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "acp": "./dist/cli/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "demo": "ts-node src/demo/run-demo.ts",
+    "demo:replay": "ts-node src/demo/replay-demo.ts",
+    "inspect": "ts-node src/cli/inspect.ts",
+    "test": "ts-node src/cli/test-runner.ts",
+    "analyze": "ts-node src/cli/analyze.ts",
+    "lint": "eslint src/**/*.ts"
+  },
+  "keywords": [
+    "agent",
+    "ai",
+    "tracing",
+    "replay",
+    "testing",
+    "debugging"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^11.1.0",
+    "inquirer": "^8.2.6",
+    "yaml": "^2.3.4",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^8.2.10",
+    "@types/node": "^20.10.0",
+    "@types/uuid": "^9.0.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.2"
+  }
+}
