@@ -1,0 +1,2 @@
+{"step_id":1,"timestamp":1000,"phase":"reason","input":{"prompt":"Find the weather"},"output":{"thought":"I need to search for weather"},"state_ref":"snapshots/step_1.json","status":"ok"}
+{"step_id":2,"timestamp":1001,"phase":"tool","input":{"toolName":"search_tool","args":"weather NYC"},"output":{},"state_ref":"snapshots/step_2.json","status":"retry"}

@@ -1,0 +1,6 @@
+{
+  "step_id": 1,
+  "memory": [{"role": "user", "content": "Find the weather"}],
+  "context_tokens": 100,
+  "tools_state": {}
+}

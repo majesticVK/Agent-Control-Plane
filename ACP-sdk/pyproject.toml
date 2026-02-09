@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "acp-sdk"
+version = "0.1.0"
+description = "Control-plane instrumentation layer for AI agents"
+authors = [{name = "ACP Team", email = "acp@example.com"}]
+requires-python = ">=3.8"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest", "black", "mypy"]

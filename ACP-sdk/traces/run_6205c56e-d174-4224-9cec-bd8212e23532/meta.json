@@ -1,0 +1,16 @@
+{
+  "run_id": "run_6205c56e-d174-4224-9cec-bd8212e23532",
+  "agent_version": "demo-v1",
+  "llm": "gpt-4-mock",
+  "created_at": 1770643072.59728,
+  "tools": [
+    "search_web",
+    "read_file"
+  ],
+  "seed": 42,
+  "temperature": 0.0,
+  "status": "success",
+  "termination_reason": null,
+  "step_count": 5,
+  "truncated": false
+}

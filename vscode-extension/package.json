@@ -1,7 +1,7 @@
 {
-    "name": "agent-control-plane-vscode",
+    "name": "agent-control-plane",
     "displayName": "Agent Control Plane",
-    "description": "VS Code extension for inspecting and debugging AI agent traces",
+    "description": "A time-travel debugger for AI agents that reconstructs cognition from deterministic execution traces.",
     "version": "1.0.0",
     "publisher": "acp",
     "engines": {
@@ -9,61 +9,77 @@
     },
     "categories": [
         "Debuggers",
-        "Visualization",
-        "Other"
+        "Visualization"
     ],
     "activationEvents": [
-        "onCommand:acp.openTrace",
-        "onCommand:acp.showPanel",
-        "workspaceContains:**/traces/*.json"
+        "onStartupFinished"
     ],
     "main": "./out/extension.js",
     "contributes": {
         "commands": [
             {
-                "command": "acp.openTrace",
-                "title": "ACP: Open Trace File"
+                "command": "acp.openRun",
+                "title": "ACP: Open Agent Run",
+                "category": "Agent Control Plane"
             },
             {
-                "command": "acp.showPanel",
-                "title": "ACP: Show Trace Inspector"
+                "command": "acp.openFailure",
+                "title": "ACP: Open at First Failure",
+                "category": "Agent Control Plane"
             },
             {
-                "command": "acp.runAgent",
-                "title": "ACP: Run Agent"
+                "command": "acp.compareRun",
+                "title": "ACP: Compare With Another Run",
+                "category": "Agent Control Plane"
             },
             {
-                "command": "acp.analyzeTrace",
-                "title": "ACP: Analyze Current Trace"
+                "command": "acp.counterfactual",
+                "title": "ACP: Run Counterfactual Simulation",
+                "category": "Agent Control Plane"
+            },
+            {
+                "command": "acp.generateReport",
+                "title": "ACP: Generate Diagnosis Report",
+                "category": "Agent Control Plane"
             }
         ],
         "viewsContainers": {
             "activitybar": [
                 {
-                    "id": "acp-explorer",
+                    "id": "acp-replay",
                     "title": "Agent Control Plane",
                     "icon": "resources/icon.svg"
                 }
             ]
         },
         "views": {
-            "acp-explorer": [
+            "acp-replay": [
                 {
-                    "id": "acp.tracesView",
-                    "name": "Traces"
+                    "id": "acp.timelinePanel",
+                    "name": "Timeline",
+                    "type": "webview"
                 },
                 {
-                    "id": "acp.stepsView",
-                    "name": "Steps"
+                    "id": "acp.stateInspector",
+                    "name": "State Inspector",
+                    "type": "webview"
+                },
+                {
+                    "id": "acp.diffViewer",
+                    "name": "Diff Viewer",
+                    "type": "webview"
+                },
+                {
+                    "id": "acp.hierarchyView",
+                    "name": "Hierarchy"
                 }
             ]
         },
         "menus": {
-            "explorer/context": [
+            "commandPalette": [
                 {
-                    "when": "resourceExtname == .json && resourcePath =~ /traces/",
-                    "command": "acp.openTrace",
-                    "group": "navigation"
+                    "command": "acp.openRun",
+                    "when": "true"
                 }
             ]
         }

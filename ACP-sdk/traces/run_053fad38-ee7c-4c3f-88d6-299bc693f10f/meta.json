@@ -1,0 +1,12 @@
+{
+  "run_id": "run_053fad38-ee7c-4c3f-88d6-299bc693f10f",
+  "agent_version": "demo-v1",
+  "llm": "gpt-4-mock",
+  "created_at": 1770637968.2514896,
+  "tools": [
+    "search_web",
+    "read_file"
+  ],
+  "seed": 42,
+  "temperature": 0.0
+}

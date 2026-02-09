@@ -1,0 +1,2 @@
+{"step_id": 1, "timestamp": 1770637940.5405993, "phase": "reason", "input": {"args": ["Given history, what next?"], "kwargs": {}}, "output": {"response": "I should check the file."}, "status": "ok", "state_ref": null, "diff_ref": null}
+{"step_id": 2, "timestamp": 1770637940.6425958, "phase": "tool", "input": {"toolName": "search_web", "args": ["secret key file location"], "kwargs": {}}, "output": {"result": "Results for secret key file location: [Page 1, Page 2]"}, "status": "ok", "state_ref": null, "diff_ref": null}

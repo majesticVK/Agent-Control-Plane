@@ -1,0 +1,14 @@
+{
+  "memory": [
+    {
+      "role": "user",
+      "content": "Find the secret key."
+    },
+    {
+      "role": "tool",
+      "content": "Results for secret key file location: [Page 1, Page 2]"
+    }
+  ],
+  "context_tokens": "********",
+  "tools_state": {}
+}

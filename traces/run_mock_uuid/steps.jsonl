@@ -1,0 +1,5 @@
+{"step_id": 1, "timestamp": 1000, "phase": "reason", "input": {"prompt": "Find the weather"}, "output": {"thought": "I need to search for weather"}, "state_ref": "snapshots/step_1.json", "status": "ok"}
+{"step_id": 2, "timestamp": 1001, "phase": "tool", "input": {"toolName": "search", "args": "weather NYC"}, "output": {}, "state_ref": "snapshots/step_2.json", "status": "ok"}
+{"step_id": 3, "timestamp": 1002, "phase": "observe", "input": {}, "output": {"result": "Sunny"}, "state_ref": "snapshots/step_3.json", "status": "ok"}
+{"step_id": 4, "timestamp": 1003, "phase": "reason", "input": {}, "output": {"thought": "I should fail now"}, "state_ref": "snapshots/step_4.json", "status": "ok"}
+{"step_id": 5, "timestamp": 1004, "phase": "tool", "input": {"toolName": "fail_tool"}, "output": {"error": "Tool failed"}, "state_ref": "snapshots/step_5.json", "status": "error"}
